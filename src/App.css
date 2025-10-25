@@ -1,0 +1,143 @@
+:root {
+    --color-primary: #6C63FF;
+    --color-secondary: #364F6B;
+    --color-background: #F5F7FA; 
+    --color-light-text: #FFFFFF;
+    --color-border-light: #EEEEEE;
+    --color-shadow-light: rgba(108, 99, 255, 0.15);
+    --color-delete: #e74c3c;
+    --color-delete-bg: #fceae9;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-secondary);
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 3rem;
+    text-align: center;
+    background: var(--color-light-text);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--color-shadow-light); 
+}
+
+.app-title {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.app-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 6px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+    margin: 10px auto 0;
+}
+
+.add-task-form-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 3rem;
+}
+
+.task-input {
+    flex-grow: 1;
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.task-input:focus {
+    border-color: var(--color-primary); 
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.add-task-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-light-text);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px var(--color-shadow-light);
+}
+
+.add-task-button:hover:not(:disabled) { background-color: #5d55e0; }
+.add-task-button:active:not(:disabled) { transform: translateY(1px); }
+.add-task-button:disabled { background-color: #d1d9e6; cursor: not-allowed; box-shadow: none; }
+
+.task-list {
+    list-style: none; 
+    padding: 0;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.task-item {
+    display: flex;         
+    align-items: center;   
+    gap: 15px; 
+    
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background-color: #FFFFFF; 
+    border-radius: 10px;
+    border-left: 5px solid var(--color-primary); 
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.task-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.task-item span {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+.task-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.task-item button {
+    background: none;
+    border: none;
+    color: var(--color-delete); 
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    flex-shrink: 0; 
+}
+
+.task-item button:hover {
+    background-color: var(--color-delete-bg);
+}
