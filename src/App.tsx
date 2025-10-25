@@ -6,7 +6,7 @@ import AddTaskForm from './components/AddTaskForm.tsx';
 import './App.css';
 
 // const API_URL = 'http://localhost:5062/api/tasks';
-const API_URL = 'http://muskanguptatask1.runasp.net/api/tasks';
+const API_URL = 'https://muskanguptatask1.runasp.net/api/tasks';
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
